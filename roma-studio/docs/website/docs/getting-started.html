@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started - Roma Studio</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/docs.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-icon">🎮</span>
+                <span class="logo-text">Roma Studio</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/docs/">Docs</a></li>
+                <li><a href="/#games">Games</a></li>
+                <li><a href="https://github.com/roma-games">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="docs-layout">
+        <aside class="docs-sidebar">
+            <div class="sidebar-content">
+                <h3>Documentation</h3>
+                <nav>
+                    <ul>
+                        <li><a href="/docs/">Overview</a></li>
+                        <li><a href="/docs/architecture.html">Architecture</a></li>
+                        <li><a href="/docs/getting-started.html" class="active">Getting Started</a></li>
+                        <li><a href="/docs/coding-standards.html">Coding Standards</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="docs-content">
+            <h1>Getting Started</h1>
+
+            <p>This guide will help you set up your development environment and start contributing to Roma Studio projects.</p>
+
+            <h2>Prerequisites</h2>
+
+            <ul>
+                <li><strong>Rust</strong> - Latest stable version (via <a href="https://rustup.rs/">rustup</a>)</li>
+                <li><strong>Git</strong> - Version control</li>
+                <li><strong>VS Code</strong> (recommended) with rust-analyzer extension</li>
+            </ul>
+
+            <h2>Installation</h2>
+
+            <pre><code># Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# Verify installation
+rustc --version
+cargo --version</code></pre>
+
+            <h2>Clone Repositories</h2>
+
+            <pre><code># Clone the main repository
+git clone https://github.com/roma-games/roma-studio.git
+cd roma-studio
+
+# Initialize submodules if needed
+git submodule update --init --recursive</code></pre>
+
+            <h2>Build the Engine</h2>
+
+            <pre><code># Build the Roma Engine
+cd engine
+cargo build
+
+# Run engine tests
+cargo test</code></pre>
+
+            <h2>Build Finisterra</h2>
+
+            <pre><code># Build the game
+cd finisterra
+cargo build
+
+# Run the game
+cargo run</code></pre>
+
+            <h2>Running Tests</h2>
+
+            <pre><code># Run all tests
+cargo test --workspace
+
+# Run specific crate tests
+cargo test -p roma-engine
+cargo test -p finisterra-client</code></pre>
+
+            <h2>Code Formatting</h2>
+
+            <pre><code># Format all code
+cargo fmt
+
+# Check formatting
+cargo fmt --check</code></pre>
+
+            <h2>Linting</h2>
+
+            <pre><code># Run clippy
+cargo clippy
+
+# Fix common issues
+cargo clippy --fix</code></pre>
+
+            <div class="docs-nav-footer">
+                <a href="/docs/coding-standards.html" class="next-page">Next: Coding Standards →</a>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

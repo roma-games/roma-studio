@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Standards - Roma Studio</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/docs.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-icon">🎮</span>
+                <span class="logo-text">Roma Studio</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/docs/">Docs</a></li>
+                <li><a href="/#games">Games</a></li>
+                <li><a href="https://github.com/roma-games">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="docs-layout">
+        <aside class="docs-sidebar">
+            <div class="sidebar-content">
+                <h3>Documentation</h3>
+                <nav>
+                    <ul>
+                        <li><a href="/docs/">Overview</a></li>
+                        <li><a href="/docs/architecture.html">Architecture</a></li>
+                        <li><a href="/docs/getting-started.html">Getting Started</a></li>
+                        <li><a href="/docs/coding-standards.html" class="active">Coding Standards</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="docs-content">
+            <h1>Coding Standards</h1>
+
+            <p>This document outlines the Rust coding conventions used throughout Roma Studio projects.</p>
+
+            <h2>Formatting</h2>
+
+            <p>We follow standard Rust formatting using <code>cargo fmt</code>:</p>
+            <pre><code># Run formatting
+cargo fmt
+
+# Check formatting
+cargo fmt --check</code></pre>
+
+            <h2>Naming Conventions</h2>
+
+            <ul>
+                <li><strong>Types</strong> - PascalCase (e.g., <code>GameEngine</code>, <code>EntityManager</code>)</li>
+                <li><strong>Traits</strong> - PascalCase (e.g., <code>Renderable</code>, <code>Serializable</code>)</li>
+                <li><strong>Functions & Methods</strong> - snake_case (e.g., <code>update_position</code>)</li>
+                <li><strong>Variables</strong> - snake_case (e.g., <code>player_health</code>)</li>
+                <li><strong>Constants</strong> - SCREAMING_SNAKE_CASE (e.g., <code>MAX_HEALTH</code>)</li>
+                <li><strong>Modules</strong> - snake_case (e.g., <code>game_state</code>)</li>
+            </ul>
+
+            <h2>Code Organization</h2>
+
+            <h3>Module Structure</h3>
+            <pre><code>src/
+├── main.rs           # Binary entry point
+├── lib.rs            # Library root
+└── [module]/
+    ├── mod.rs        # Module definition
+    ├── [submodule]/  # Submodules
+    └── ...</code></pre>
+
+            <h3>Crate Structure</h3>
+            <pre><code>crates/
+├── client/           # Client-specific code
+├── server/           # Server-specific code
+├── protocol/         # Shared protocol definitions
+├── engine/           # Engine core
+└── primitives/       # Shared primitives</code></pre>
+
+            <h2>Error Handling</h2>
+
+            <ul>
+                <li>Use <code>Result&lt;T, E&gt;</code> for recoverable errors</li>
+                <li>Use <code>anyhow</code> for application-level error handling</li>
+                <li>Use <code>thiserror</code> for library-level error types</li>
+                <li>Provide descriptive error messages</li>
+            </ul>
+
+            <h2>Documentation</h2>
+
+            <ul>
+                <li>Document all public APIs with <code>///</code> doc comments</li>
+                <li>Include examples in documentation where helpful</li>
+                <li>Use <code>//!</code> for module-level documentation</li>
+                <li>Run <code>cargo doc --open</code> to generate docs locally</li>
+            </ul>
+
+            <pre><code>/// Represents a game entity with position and velocity.
+///
+/// # Examples
+///
+/// ```
+/// let entity = Entity::new(0.0, 0.0);
+/// ```
+pub struct Entity {
+    x: f32,
+    y: f32,
+}</code></pre>
+
+            <h2>Testing</h2>
+
+            <ul>
+                <li>Write unit tests in <code>#[cfg(test)]</code> modules</li>
+                <li>Use integration tests in <code>tests/</code> directory</li>
+                <li>Aim for meaningful test coverage on critical paths</li>
+                <li>Use <code>cargo test</code> to run all tests</li>
+            </ul>
+
+            <h2>Dependencies</h2>
+
+            <ul>
+                <li>Pin dependency versions in <code>Cargo.toml</code></li>
+                <li>Use <code>cargo update -p &lt;crate&gt;</code> to update specific crates</li>
+                <li>Review dependencies for security vulnerabilities</li>
+                <li>Avoid unnecessary dependencies</li>
+            </ul>
+
+            <h2>Git Conventions</h2>
+
+            <ul>
+                <li><strong>Commits</strong> - Use conventional commits: <code>feat: add new entity type</code></li>
+                <li><strong>Branches</strong> - Format: <code>type/short-description</code> (e.g., <code>feat/gameplay-system</code>)</li>
+                <li><strong>PRs</strong> - Include description and link to issue</li>
+            </ul>
+
+            <div class="docs-nav-footer">
+                <a href="/docs/architecture.html" class="next-page">← Back to Architecture</a>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# Robots.txt for Roma Studio
+
+User-agent: *
+Allow: /
+
+Sitemap: https://roma.games/sitemap.xml

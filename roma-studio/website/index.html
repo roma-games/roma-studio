@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roma Studio - Agent-Powered Game Development</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-icon">🎮</span>
+                <span class="logo-text">Roma Studio</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/docs/">Docs</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="https://github.com/roma-games">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-container">
+            <h1>Building Games with Agent Collaboration</h1>
+            <p class="tagline">A game development studio powered by OpenClaw multi-agent systems</p>
+            <div class="hero-cta">
+                <a href="/docs/" class="btn btn-primary">Explore Docs</a>
+                <a href="https://github.com/roma-games/finisterra" class="btn btn-secondary">View Finisterra</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section">
+            <div class="container">
+                <h2>What We Build</h2>
+                <div class="grid grid-3">
+                    <div class="card">
+                        <div class="card-icon">⚙️</div>
+                        <h3>Roma Engine</h3>
+                        <p>A 2D game engine built in Rust with wgpu for cross-platform graphics.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🗡️</div>
+                        <h3>Finisterra</h3>
+                        <p>Our first game—a top-down action RPG using the Roma Engine.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🤖</div>
+                        <h3>Agent Framework</h3>
+                        <p>Multi-agent collaboration system for efficient game development.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tech" class="section section-alt">
+            <div class="container">
+                <h2>Tech Stack</h2>
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>Layer</th>
+                            <th>Technology</th>
+                            <th>Repository</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Engine</td>
+                            <td>Rust + wgpu</td>
+                            <td><code>engine/</code></td>
+                        </tr>
+                        <tr>
+                            <td>Client</td>
+                            <td>Rust + Roma</td>
+                            <td><code>finisterra/crates/client/</code></td>
+                        </tr>
+                        <tr>
+                            <td>Server</td>
+                            <td>Rust + Tokio</td>
+                            <td><code>finisterra/crates/server/</code></td>
+                        </tr>
+                        <tr>
+                            <td>Protocol</td>
+                            <td>Bincode + WebTransport</td>
+                            <td><code>finisterra/crates/protocol/</code></td>
+                        </tr>
+                        <tr>
+                            <td>Database</td>
+                            <td>SQLite + SQLx</td>
+                            <td><code>finisterra/crates/database/</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="games" class="section">
+            <div class="container">
+                <h2>Our Games</h2>
+                <div class="game-card">
+                    <div class="game-info">
+                        <h3>Finisterra</h3>
+                        <p>A top-down action RPG featuring cooperative gameplay, procedural generation, and a rich fantasy world. Built entirely with the Roma Engine.</p>
+                        <ul class="game-features">
+                            <li>Co-op multiplayer</li>
+                            <li>Procedural world generation</li>
+                            <li>Rust-native performance</li>
+                        </ul>
+                        <a href="https://github.com/roma-games/finisterra" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🎮</span>
+                    <span>Roma Studio</span>
+                </div>
+                <nav class="footer-links">
+                    <a href="/docs/">Documentation</a>
+                    <a href="https://github.com/roma-games">GitHub</a>
+                    <a href="https://discord.com/invite/clawd">Discord</a>
+                </nav>
+            </div>
+            <p class="copyright">&copy; 2026 Roma Studio. Built with OpenClaw agent collaboration.</p>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
